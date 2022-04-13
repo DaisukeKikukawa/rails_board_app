@@ -3,7 +3,15 @@ ja:
     new:
       sign_up: '新規登録'
       login: 'ログイン'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
 
   user_sessions:
     new:
       login: 'ログイン'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
