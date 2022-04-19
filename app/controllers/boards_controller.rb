@@ -13,7 +13,8 @@ class BoardsController < ApplicationController
       redirect_to boards_path, success: ('掲示板を作成しました')
     else
       flash[:danger] = '掲示板を作成できませんでした'
-      render[:new]
+      # render[:new]
+       render action: :new
     end
   end
 
