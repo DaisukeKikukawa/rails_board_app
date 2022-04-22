@@ -5,9 +5,24 @@
       <div class="card-body">
         <h4 class="card-title">
           <a href="#">
-            <%= board.title %>
+            <%= link_to board.title, board_path(board) %>
           </a>
         </h4>
+
+        <ul class='crud-menu-btn list-inline float-right'>
+        <li class="list-inline-item">
+          <%= link_to '#', id: "button-edit-#{board.id}" do %>
+            <%= icon 'fa', 'pen' %>
+          <% end %>
+        </li>
+        <li class="list-inline-item">
+        <%= link_to '#', id: "button-delete-#{board.id}" do %>
+        <%= icon 'fas', 'trash' %>
+        <% end %>
+        </li>
+        </ul>
+
+
         <div class='mr10 float-right'>
           <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
           <a href="#"><%= icon 'fa', 'pen' %></a>
