@@ -9,6 +9,12 @@
           </a>
         </h4>
 
+        <% if current_user.own?(board) %>
+          <%= render 'crud_menus', board: board %>
+        <% else %>
+          <%= render 'bookmark_button', board: board  %>
+        <% end %>
+
       <% if current_user.id == board.user_id %>
         <ul class='crud-menu-btn list-inline float-right'>
         <li class="list-inline-item">
@@ -23,6 +29,15 @@
         </li>
         </ul>
       <% end %>
+
+        <% if current_user.already_bookmarked?(board) %>
+          <%= link_to 'いいねを外す', bookmark_path(board), method: :delete %>
+        <% else %>
+          <%= link_to 'いいねをする', bookmarks_path(board), method: :post %>
+        <% end %>
+          <%= board.bookmarks.count %>
+
+
 
 
         <ul class="list-inline">

@@ -39,13 +39,14 @@ class BoardsController < ApplicationController
 
     end
 
-
     def destroy
      @board.destroy!
      redirect_to boards_path, success: t('defaults.message.deleted', item: Board.model_name.human)
     end
 
-
+    def bookmarks
+      @bookmark_boards = current_user.bookmark_boards.includes(:user).order(created_at: :desc)
+    end
 
   private
 
