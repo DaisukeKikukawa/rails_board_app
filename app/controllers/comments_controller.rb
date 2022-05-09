@@ -1,13 +1,15 @@
 class CommentsController < ApplicationController
 
   def create
-    comment = current_user.comments.build(comment_params)
-    if comment.save
-      redirect_to board_path(comment.board), success: ('コメントを作成しました')
-    else
-      redirect_to board_path(comment.board), danger: ('コメントを作成できませんでした')
-    end
+    @comment = current_user.comments.build(comment_params)
+    @comment.save
   end
+
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy
+  end
+
 
   private
 
