@@ -1,0 +1,11 @@
+<h1>検索結果</h1>
+  <% if @results.length != 0 %>
+    <% @results.each do |result| %>
+      <%= result.title %>
+      <%= result.body %>
+    <% end %>
+  <% else %>
+  検索結果はありません
+  <% end %>
+
+<%= link_to 'Top', boards_path %>

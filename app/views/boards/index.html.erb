@@ -3,14 +3,13 @@
   <div class="row">
     <div class="col-lg-10 offset-lg-1">
       <!-- 検索フォーム -->
-      <form>
-        <div class="input-group mb-3">
-          <input class="form-control" placeholder="検索ワード" type="search" />
+        <%= search_form_for @q, url: boards_path do |f| %>
+          <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: "キーワード検索" %>
           <div class="input-group-append">
-            <input type="submit" value="検索" class="btn btn-primary" />
+            <%= f.submit class: 'btn btn-primary' %>
           </div>
-        </div>
-      </form>
+        <% end %>
+      <!-- ここまで -->
     </div>
   </div>
 
