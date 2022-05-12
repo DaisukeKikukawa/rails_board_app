@@ -78,3 +78,6 @@ gem "mini_magick"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack'
+
+gem 'letter_opener_web', '~> 1.0'
+gem 'config'
