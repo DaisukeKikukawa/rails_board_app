@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   delete '/logout' , to: 'user_sessions#destroy'
 
   namespace :admin do
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_session#create'
